@@ -14,35 +14,66 @@ alert("Welcome to Will's password generator. Click the red button to get started
 // Assignment code here
 function generatePassword() {{
 
-  // first prompt 
+  // password length prompt 
   var lengthOfPassword = Number(window.prompt("Type in how long you would like your password to be (between 8 and 128 characters)"));
   // if password is not between 8 and 128 it returns to prompt again 
     while(lengthOfPassword < 8 || lengthOfPassword > 128) {
       lengthOfPassword = Number(window.prompt("Your input is invalid. Make sure your legth is between 8 and 128"));  
+      // need to add something that will kick back numbers
     }
+
+    console.log(lengthOfPassword); // will return number entered 
   }
 
-  //function that says yes or not to lowercase letters
+  //function that says yes or no to lowercase letters
   var yesLowerCase = window.confirm("Would you like to include LOWERCASE characters in your password? Click OK for yes or CANCEL for no");
     if (yesLowerCase) {
 
+
+    console.log(yesLowerCase); //will return true for ok
     }
   // function that says yes or no to upper case letters
   var yesUpperCase = window.confirm("Would you like to include UPPERCASE characters in your password? Click OK for yes or CANCEL for no");
+    if (yesUpperCase) {
 
 
+    console.log (yesUpperCase); //will return true for ok 
+    }
   // funciton that says yes or no to numbers
   var yesNumber = window.confirm("Would you like to include NUMBERS in your password? Click OK for yes or CANCEL for no");
-  
+    if (yesNumber) {
+
+      console.log (yesNumber); //will return true for ok 
+    }
 
   // function that says yes or no to special charcaters
   var yesSpecialCharacter = window.confirm("Would you like to include SPECIAL CHARACTERS in your password? Click OK for yes or CANCEL for no");
-    
+    if (yesSpecialCharacter) {
 
-  //function that gathers responses from prior answer 
+      console.log (yesSpecialCharacter); //will return true for ok 
+    }
 
-  // for loop that takes these answers - randomly grabs string of variables - then generates it in the box on screen 
-  var randomAnswer = specialCharacter[Math.floor(Math.random() * specialCharacter.length)];
+  // function that will return back to previous vars if nothing is selected
+  while (!yesLowerCase && !yesNumber && !yesUpperCase && !yesSpecialCharacter) {
+    window.alert("You must confirm at least one option");
+    // is there away to call back to previous four options instead of writing again? 
+    var yesLowerCase = window.confirm("Would you like to include LOWERCASE characters in your password? Click OK for yes or CANCEL for no");
+    var yesUpperCase = window.confirm("Would you like to include UPPERCASE characters in your password? Click OK for yes or CANCEL for no");
+    var yesNumber = window.confirm("Would you like to include NUMBERS in your password? Click OK for yes or CANCEL for no");
+    var yesSpecialCharacter = window.confirm("Would you like to include SPECIAL CHARACTERS in your password? Click OK for yes or CANCEL for no");
+  }
+  
+
+  //function that somehow gathers responses together and pulls variables if true and doesnt if not 
+  // could i put all four responses in one variable and then that variable determines the vars to pull from? 
+  
+
+
+  // for loop that takes these answers - randomly grabs string of variables - then generates it in the box on screen
+  // somehow use lengthofpassword to determine the amount of characters given in the password 
+  // hypothetically will replace special character with the above variable that pulls in all the answers to generate final password 
+  // var randomanswer can be replaced with specialcharacter
+  var randomAnswer = specialCharacter[Math.floor(Math.random() * lengthOfPassword.length)];
   console.log(randomAnswer);
   }
 
