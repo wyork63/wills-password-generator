@@ -7,6 +7,10 @@
 
 ### Click here for a live deployment of the site (insert link)
 
-### Click here to access the repo (insert link)
+### Click here to access the repo https://github.com/wyork63/wills-password-generator
 
 ### check out a screenshot below 
+![Screenshot of password generator](/image/PasswordGeneratorScreenshot.png)
+
+
+
