@@ -1,12 +1,16 @@
 // variables to pick from
+// var specialCharacter = [' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.','/',':',';','<','=','>','?','@','[','^','_','`','{','|','}','~']
 
-var specialCharacter = [' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.','/',':',';','<','=','>','?','@','[','^','_','`','{','|','}','~']
+// var number = ['0','1','2','3','4','5','6','7','8','9']
 
-var number = ['0','1','2','3','4','5','6','7','8','9']
+// var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
-var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+// var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
-var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+var specialCharacter = " !\"#$%&`'()*+,-.:'<=>?@[^_{}|`]"
+var number = "0123456789"
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var lowerCase = "abcdefghijklmnopqrstuvwxyz"
 
 //Opening welcome
 alert("Welcome to Will's password generator. Click the red button to get started.");
@@ -63,24 +67,33 @@ function generatePassword() {{
     var yesNumber = window.confirm("Would you like to include NUMBERS in your password? Click OK for yes or CANCEL for no");
     var yesSpecialCharacter = window.confirm("Would you like to include SPECIAL CHARACTERS in your password? Click OK for yes or CANCEL for no");
   }
-  
+  // WHEN FINISHED WITH PROJECT DELETE ALL CONSL.LOGS AND CONSOLIDATE CODE 
 
   //function that somehow gathers responses together and pulls variables if true and doesnt if not 
   // could i put all four responses in one variable and then that variable determines the vars to pull from? 
-  
-
+  var firstPassword = "";
+    (yesLowerCase) ? firstPassword += lowerCase: "";
+    (yesUpperCase) ? firstPassword += upperCase: "";
+    (yesNumber) ? firstPassword += number: "";
+    (yesSpecialCharacter) ? firstPassword += specialCharacter: "";
 
   // for loop that takes these answers - randomly grabs string of variables - then generates it in the box on screen
   // somehow use lengthofpassword to determine the amount of characters given in the password 
-  // hypothetically will replace special character with the above variable that pulls in all the answers to generate final password 
+  
+  // to generate final password 
+  var finalPassword = "";
   // var randomanswer can be replaced with specialcharacter
-  var randomAnswer = specialCharacter[Math.floor(Math.random() * lengthOfPassword.length)];
+  for(var i = 0; i < lengthOfPassword; i++) {
+   finalPassword = firstPassword.charAt(Math.floor(Math.random() * firstPassword.length));
+  }
+    return finalPassword; 
+
   console.log(randomAnswer);
   }
 
 
 //final password
-var finalPassword = "";
+
 
 // GIVEN CODE BELOW
 
