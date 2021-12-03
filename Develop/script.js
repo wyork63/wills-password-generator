@@ -13,19 +13,12 @@ function generatePassword() {
     }
 
     
-
-
   // lowercase, uppercase, numbers, special characters   
   var yesLowerCase = window.confirm("Would you like to include LOWERCASE characters in your password. Click OK for yesr or CANCEL for no");
   var yesUpperCase = window.confirm("Would you like to include UPPERCASE characters in your password. Click OK for yesr or CANCEL for no");
   var yesNumbers = window.confirm("Would you like to include NUMBERS in your password. Click OK for yesr or CANCEL for no");
   var yesSpecialCharacters = window.confirm("Would you like to include SPECIAL CHARACTERS in your password. Click OK for yesr or CANCEL for no");
     
-
-  var finalPassword = "";
-  for (var i = 0; i < lengthOfPassword; i++) {
-    finalPassword 
-  }
 
 // Prompt the user for password criteria
 
