@@ -82,7 +82,6 @@ function generatePassword() {{
 //final password
 var finalPassword = "";
 
-
 // GIVEN CODE BELOW
 
 // Get references to the #generate element
