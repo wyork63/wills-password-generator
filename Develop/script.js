@@ -17,9 +17,10 @@ function generatePassword() {{
   // password length prompt 
   var lengthOfPassword = Number(window.prompt("Type in how long you would like your password to be (between 8 and 128 characters)"));
   // if password is not between 8 and 128 it returns to prompt again 
-    while(lengthOfPassword < 8 || lengthOfPassword > 128) {
-      lengthOfPassword = Number(window.prompt("Your input is invalid. Make sure your legth is between 8 and 128"));  
-      // need to add something that will kick back numbers
+    while(lengthOfPassword < 8 || lengthOfPassword > 128);
+    // need to add something that will kick back letters
+    while(isNaN(lengthOfPassword)) {
+      lengthOfPassword = Number(window.prompt("Your input is invalid. Make sure to enter a NUMBER between 8 and 128"));  
     }
 
     console.log(lengthOfPassword); // will return number entered 
