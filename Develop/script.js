@@ -1,9 +1,5 @@
 // variables to pick from
-//using these variables includes the commas 
-// var specialCharacter = [' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.','/',':',';','<','=','>','?','@','[','^','_','`','{','|','}','~']
-// var number = ['0','1','2','3','4','5','6','7','8','9']
-// var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-// var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+//using these variables includes the commas when calling info
 
 var specialCharacter = " !\"#$%&`'()*+,-.:'<=>?@[^_{}|`]"
 var number = "0123456789"
@@ -24,38 +20,19 @@ function generatePassword() {{
     while(isNaN(lengthOfPassword)) {
       lengthOfPassword = Number(window.prompt("Your input is invalid. Make sure to enter a NUMBER between 8 and 128"));  
     }
-
-    console.log(lengthOfPassword); // will return number entered 
   }
-
-  //function that says yes or no to lowercase letters
+  //function that says yes or no to lowercase letters 
   var yesLowerCase = window.confirm("Would you like to include LOWERCASE characters in your password? Click OK for yes or CANCEL for no");
-    if (yesLowerCase) {
 
-
-    console.log(yesLowerCase); //will return true for ok
-    }
   // function that says yes or no to upper case letters
   var yesUpperCase = window.confirm("Would you like to include UPPERCASE characters in your password? Click OK for yes or CANCEL for no");
-    if (yesUpperCase) {
-
-
-    console.log (yesUpperCase); //will return true for ok 
-    }
+  
   // funciton that says yes or no to numbers
   var yesNumber = window.confirm("Would you like to include NUMBERS in your password? Click OK for yes or CANCEL for no");
-    if (yesNumber) {
-
-      console.log (yesNumber); //will return true for ok 
-    }
-
+   
   // function that says yes or no to special charcaters
   var yesSpecialCharacter = window.confirm("Would you like to include SPECIAL CHARACTERS in your password? Click OK for yes or CANCEL for no");
-    if (yesSpecialCharacter) {
-
-      console.log (yesSpecialCharacter); //will return true for ok 
-    }
-
+  
   // function that will return back to previous vars if nothing is selected
   while (!yesLowerCase && !yesNumber && !yesUpperCase && !yesSpecialCharacter) {
     window.alert("You must confirm at least one option");
@@ -65,30 +42,27 @@ function generatePassword() {{
     var yesNumber = window.confirm("Would you like to include NUMBERS in your password? Click OK for yes or CANCEL for no");
     var yesSpecialCharacter = window.confirm("Would you like to include SPECIAL CHARACTERS in your password? Click OK for yes or CANCEL for no");
   }
-  // WHEN FINISHED WITH PROJECT DELETE ALL CONSL.LOGS AND CONSOLIDATE CODE 
 
-  //function that somehow gathers responses together and pulls variables if true and doesnt if not 
-  // could i put all four responses in one variable and then that variable determines the vars to pull from? 
-  var firstPassword = "";
-    (yesLowerCase) ? firstPassword += lowerCase: "";
-    (yesUpperCase) ? firstPassword += upperCase: "";
-    (yesNumber) ? firstPassword += number: "";
+  //function that gathers responses together and pulls variables if true and doesnt if not  
+  var templatePassword = "";
+  // question mark creates an if statement that if it is true from the above variables - it will add the lowercase variables to the password template 
+    (yesLowerCase) ? templatePassword += lowerCase: "";
+    (yesUpperCase) ? templatePassword += upperCase: "";
+    (yesNumber) ? templatePassword += number: "";
     (yesSpecialCharacter) ? firstPassword += specialCharacter: "";
 
-  // for loop that takes these answers - randomly grabs string of variables - then generates it in the box on screen
-  // somehow use lengthofpassword to determine the amount of characters given in the password 
   
   // to generate final password 
   var finalPassword = "";
-  // var randomanswer can be replaced with specialcharacter
+  // for loop that takes these answers - randomly grabs string of variables - then generates it in the box on screen
+  // use lengthofpassword variable to tell new variable (i) that it needs to be shorter than that 
+  // help from this on stackoverflow https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
   for(var i = 0; i < lengthOfPassword; i++) {
-   finalPassword += firstPassword.charAt(Math.floor(Math.random() * firstPassword.length));
+   finalPassword += templatePassword.charAt(Math.floor(Math.random() * templatePassword.length));
   }
   //final password
     return finalPassword; 
-
   }
-
 // GIVEN CODE BELOW
 
 // Get references to the #generate element
