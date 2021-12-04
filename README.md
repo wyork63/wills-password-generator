@@ -5,7 +5,7 @@
 ### Once through all prompts a randomly generated password will appear in the box 
 
 
-### Click here for a live deployment of the site (insert link)
+### Click here for a live deployment of the site https://wyork63.github.io/wills-password-generator/Develop/index.html
 
 ### Click here to access the repo https://github.com/wyork63/wills-password-generator
 
